@@ -23,7 +23,7 @@ function start() {
 
 			
 			// ⭐ 고정 숫자
-            var fixed = [1, 2, 3, 4].filter(n => n <= num);
+            var fixed = [5, 5, 2, 3].filter(n => n <= num);
 
             // ⭐ 나머지 숫자 만들기
             for (var i = 1; i <= num; i++) {
