@@ -14,32 +14,40 @@ function start() {
 	if (num * 0 === 0 && num != "") {
 		if (3 <= num && num <= 10000 && num == Math.floor(num)) {
 			myModal.toggle();
-			// ⭐ 고정 숫자
-var fixed = [1, 2, 3, 4];
 
-// ⭐ 나머지 숫자 만들기
-for (var i = 1; i <= num; i++) {
-	if (!fixed.includes(i)) {
-		seqArray.push(i);
+
+			// ⭐ 이거 추가
+	        seqArray = [];
+			cnt = 0;
+			isOverlabed = false;
+
+			
+			// ⭐ 고정 숫자
+            var fixed = [1, 2, 3, 4].filter(n => n <= num);
+
+            // ⭐ 나머지 숫자 만들기
+            for (var i = 1; i <= num; i++) {
+	        if (!fixed.includes(i)) {
+		        seqArray.push(i);
 	}
 }
 
-// ⭐ 랜덤 섞기
-for (var i = 0; i < seqArray.length; i++) {
-	var rand = Math.floor(Math.random() * seqArray.length);
-	var tmp = seqArray[i];
-	seqArray[i] = seqArray[rand];
-	seqArray[rand] = tmp;
+            // ⭐ 랜덤 섞기
+            for (var i = 0; i < seqArray.length; i++) {
+	        var rand = Math.floor(Math.random() * seqArray.length);
+	        var tmp = seqArray[i];
+	        seqArray[i] = seqArray[rand];
+	        seqArray[rand] = tmp;
 }
 
-// ⭐ 앞에 고정 숫자 붙이기
-seqArray = fixed.concat(seqArray);
-			if (chk1) isOverlabed = true;
-			if (chk2) {
-				var outter = document.getElementById('outter');
-				var inner = document.getElementById('field');
-				outter.className = 'd-flex flex-column justify-content-center vh-100';
-				inner.className = 'my-wmax my-hmax';
+            // ⭐ 앞에 고정 숫자 붙이기
+            seqArray = fixed.concat(seqArray);
+			     if (chk1) isOverlabed = true;
+			     if (chk2) {
+				     var outter = document.getElementById('outter');
+				     var inner = document.getElementById('field');
+				     outter.className = 'd-flex flex-column justify-content-center vh-100';
+				     inner.className = 'my-wmax my-hmax';
 			}
 		} else {
 			document.getElementById('lb1').style.display = 'none';
