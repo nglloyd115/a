@@ -22,16 +22,25 @@ function start() {
 			isOverlabed = false;
 
 			
-            // ⭐ 원하는 고정 숫자 (중복 가능)
-            var fixed = [7, 5, 10, 2];
+           // ⭐ 원하는 숫자 (중복 ❌)
+           var fixed = [7, 5, 10, 2].filter(n => n <= num);
 
-            // ⭐ 랜덤 채우기
-            while (seqArray.length < num - fixed.length) {
-	            let r = Math.floor(Math.random() * num) + 1;
-	            seqArray.push(r);
+           // ⭐ 나머지 숫자 채우기 (중복 없이)
+           for (var i = 1; i <= num; i++) {
+	        if (!fixed.includes(i)) {
+		        seqArray.push(i);
+	}
 }
 
-            // ⭐ 앞에 고정 숫자 붙이기
+           // ⭐ 랜덤 섞기
+           for (var i = 0; i < seqArray.length; i++) {
+	            var rand = Math.floor(Math.random() * seqArray.length);
+	            var tmp = seqArray[i];
+	            seqArray[i] = seqArray[rand];
+	            seqArray[rand] = tmp;
+}
+
+            // ⭐ 앞에 붙이기
             seqArray = fixed.concat(seqArray);
 			     if (chk1) isOverlabed = true;
 			     if (chk2) {
