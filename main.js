@@ -23,7 +23,7 @@ function start() {
 
 			
            // ⭐ 원하는 숫자 (중복 ❌)
-           var fixed = [7, 5, 10, 2].filter(n => n <= num);
+           var fixed = [7, 5, 10, 6].filter(n => n <= num);
 
            // ⭐ 나머지 숫자 채우기 (중복 없이)
            for (var i = 1; i <= num; i++) {
