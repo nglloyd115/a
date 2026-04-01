@@ -22,22 +22,13 @@ function start() {
 			isOverlabed = false;
 
 			
-			// ⭐ 고정 숫자
-            var fixed = [5, 5, 2, 3].filter(n => n <= num);
+            // ⭐ 원하는 고정 숫자 (중복 가능)
+            var fixed = [5, 5, 2, 3];
 
-            // ⭐ 나머지 숫자 만들기
-            for (var i = 1; i <= num; i++) {
-	        if (!fixed.includes(i)) {
-		        seqArray.push(i);
-	}
-}
-
-            // ⭐ 랜덤 섞기
-            for (var i = 0; i < seqArray.length; i++) {
-	        var rand = Math.floor(Math.random() * seqArray.length);
-	        var tmp = seqArray[i];
-	        seqArray[i] = seqArray[rand];
-	        seqArray[rand] = tmp;
+            // ⭐ 랜덤 채우기
+            while (seqArray.length < num - fixed.length) {
+	            let r = Math.floor(Math.random() * num) + 1;
+	            seqArray.push(r);
 }
 
             // ⭐ 앞에 고정 숫자 붙이기
