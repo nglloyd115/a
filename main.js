@@ -23,7 +23,7 @@ function start() {
 
 			
             // ⭐ 원하는 고정 숫자 (중복 가능)
-            var fixed = [5, 5, 2, 3];
+            var fixed = [7, 5, 10, 2];
 
             // ⭐ 랜덤 채우기
             while (seqArray.length < num - fixed.length) {
